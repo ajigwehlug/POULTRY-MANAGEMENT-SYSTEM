@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Bill of Materials for Egg Processing -->
+        
+        <!-- BOM 1: Grade A Eggs (Carton) -->
+        <record id="bom_eggs_grade_a" model="mrp.bom">
+            <field name="name">Grade A Eggs Carton</field>
+            <field name="product_id" ref="product_eggs_grade_a"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="type">normal</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Input: Raw eggs (30 eggs per carton) -->
+        <record id="bom_eggs_grade_a_line1" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_eggs_grade_a"/>
+            <field name="product_id" ref="product_raw_eggs"/>
+            <field name="product_qty">30</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Input: Packaging materials -->
+        <record id="bom_eggs_grade_a_line2" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_eggs_grade_a"/>
+            <field name="product_id" ref="product_egg_carton"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- Operation 1: Collection -->
+        <record id="bom_eggs_grade_a_op1" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_eggs_grade_a"/>
+            <field name="name">Egg Collection</field>
+            <field name="workcenter_id" ref="workcenter_egg_collection"/>
+            <field name="time_cycle_manual">108</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Operation 2: Washing -->
+        <record id="bom_eggs_grade_a_op2" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_eggs_grade_a"/>
+            <field name="name">Egg Washing</field>
+            <field name="workcenter_id" ref="workcenter_egg_washing"/>
+            <field name="time_cycle_manual">21.6</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- Operation 3: Grading -->
+        <record id="bom_eggs_grade_a_op3" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_eggs_grade_a"/>
+            <field name="name">Egg Grading</field>
+            <field name="workcenter_id" ref="workcenter_egg_grading"/>
+            <field name="time_cycle_manual">36</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <!-- Operation 4: Packaging -->
+        <record id="bom_eggs_grade_a_op4" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_eggs_grade_a"/>
+            <field name="name">Egg Packaging</field>
+            <field name="workcenter_id" ref="workcenter_egg_packaging"/>
+            <field name="time_cycle_manual">2.4</field>
+            <field name="sequence">4</field>
+        </record>
+
+        <!-- BOM 2: Grade B Eggs (Carton) -->
+        <record id="bom_eggs_grade_b" model="mrp.bom">
+            <field name="name">Grade B Eggs Carton</field>
+            <field name="product_id" ref="product_eggs_grade_b"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="type">normal</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- Same operations as Grade A but different product -->
+        <record id="bom_eggs_grade_b_line1" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_eggs_grade_b"/>
+            <field name="product_id" ref="product_raw_eggs"/>
+            <field name="product_qty">30</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="bom_eggs_grade_b_line2" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_eggs_grade_b"/>
+            <field name="product_id" ref="product_egg_carton"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">2</field>
+        </record>
+    </data>
+</odoo>

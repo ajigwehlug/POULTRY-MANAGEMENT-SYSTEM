@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Stock Locations for Poultry - Odoo 19 compatible -->
+        <!-- Note: Parent location will be set to warehouse location automatically -->
+        
+        <record id="stock_location_farm" model="stock.location">
+            <field name="name">Farm</field>
+            <field name="usage">internal</field>
+        </record>
+
+        <record id="stock_location_processing" model="stock.location">
+            <field name="name">Processing Facility</field>
+            <field name="usage">internal</field>
+        </record>
+
+        <record id="stock_location_quarantine" model="stock.location">
+            <field name="name">Quarantine</field>
+            <field name="usage">internal</field>
+        </record>
+    </data>
+</odoo>

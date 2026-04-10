@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Bill of Materials for Broiler Processing -->
+        
+        <!-- BOM 1: Fresh Broiler Whole Bird -->
+        <record id="bom_broiler_whole" model="mrp.bom">
+            <field name="name">Fresh Broiler Whole Bird</field>
+            <field name="product_id" ref="product_broiler_whole"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="type">normal</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Input: Live Broiler -->
+        <record id="bom_broiler_whole_line1" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_broiler_whole"/>
+            <field name="product_id" ref="product_cobb_broiler_live"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Operation 1: Slaughtering -->
+        <record id="bom_broiler_whole_op1" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_broiler_whole"/>
+            <field name="name">Slaughtering</field>
+            <field name="workcenter_id" ref="workcenter_slaughterhouse"/>
+            <field name="time_cycle_manual">36</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Operation 2: Plucking -->
+        <record id="bom_broiler_whole_op2" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_broiler_whole"/>
+            <field name="name">Plucking</field>
+            <field name="workcenter_id" ref="workcenter_plucking"/>
+            <field name="time_cycle_manual">60</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- Operation 3: Evisceration -->
+        <record id="bom_broiler_whole_op3" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_broiler_whole"/>
+            <field name="name">Evisceration</field>
+            <field name="workcenter_id" ref="workcenter_evisceration"/>
+            <field name="time_cycle_manual">90</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <!-- BOM 2: Broiler Cut Parts -->
+        <record id="bom_broiler_cutparts" model="mrp.bom">
+            <field name="name">Broiler Cut Parts (Vacuum Packed)</field>
+            <field name="product_id" ref="product_broiler_cutparts"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_kg"/>
+            <field name="type">normal</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- Input: Fresh Whole Bird -->
+        <record id="bom_broiler_cutparts_line1" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_broiler_cutparts"/>
+            <field name="product_id" ref="product_broiler_whole"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Input: Packaging materials -->
+        <record id="bom_broiler_cutparts_line2" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_broiler_cutparts"/>
+            <field name="product_id" ref="product_packaging_materials"/>
+            <field name="product_qty">1</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- Operation 1: Cutting -->
+        <record id="bom_broiler_cutparts_op1" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_broiler_cutparts"/>
+            <field name="name">Cutting</field>
+            <field name="workcenter_id" ref="workcenter_cutting"/>
+            <field name="time_cycle_manual">72</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Operation 2: Packaging -->
+        <record id="bom_broiler_cutparts_op2" model="mrp.bom.operation">
+            <field name="bom_id" ref="bom_broiler_cutparts"/>
+            <field name="name">Vacuum Packaging</field>
+            <field name="workcenter_id" ref="workcenter_packaging"/>
+            <field name="time_cycle_manual">45</field>
+            <field name="sequence">2</field>
+        </record>
+    </data>
+</odoo>
