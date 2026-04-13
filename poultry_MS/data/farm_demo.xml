@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Contacts -->
+        <record id="res_partner_kwame_bawah" model="res.partner">
+            <field name="name">Kwame Bawah</field>
+            <field name="email">kwame@bawahfarms.gh</field>
+            <field name="phone">+233246123456</field>
+            <field name="is_company">False</field>
+            <field name="type">contact</field>
+        </record>
+
+        <record id="res_partner_kumasi_market" model="res.partner">
+            <field name="name">Kumasi Central Market</field>
+            <field name="email">kumasi@centralmarket.gh</field>
+            <field name="phone">+233246654321</field>
+            <field name="is_company">True</field>
+            <field name="type">contact</field>
+        </record>
+
+        <record id="res_partner_ashanti_supermarket" model="res.partner">
+            <field name="name">Ashanti Supermarket Chain</field>
+            <field name="email">ashanti@supermarket.gh</field>
+            <field name="phone">+233246789012</field>
+            <field name="is_company">True</field>
+            <field name="type">contact</field>
+        </record>
+
+        <!-- Demo Farm -->
+        <record id="farm_bawah" model="poultry.farm">
+            <field name="name">Bawah Farms Ghana</field>
+            <field name="code">BAW-KUM-001</field>
+            <field name="manager_id" ref="res_partner_kwame_bawah"/>
+            <field name="main_contact_id" ref="res_partner_kwame_bawah"/>
+            <field name="scale">large</field>
+            <field name="location">Kumasi</field>
+            <field name="region">Ashanti</field>
+            <field name="total_capacity">25000</field>
+            <field name="is_active">True</field>
+        </record>
+    </data>
+</odoo>

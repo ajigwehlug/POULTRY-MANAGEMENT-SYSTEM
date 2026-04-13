@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Chart of Accounts for Poultry - Odoo 19 compatible -->
+        
+        <!-- Expense Accounts -->
+        <record id="account_poultry_feed" model="account.account">
+            <field name="code">7000</field>
+            <field name="name">Poultry Feed Expense</field>
+            <field name="account_type">expense</field>
+        </record>
+
+        <record id="account_poultry_medication" model="account.account">
+            <field name="code">7010</field>
+            <field name="name">Medication &amp; Vaccines</field>
+            <field name="account_type">expense</field>
+        </record>
+
+        <record id="account_poultry_labor" model="account.account">
+            <field name="code">7020</field>
+            <field name="name">Farm Labor Costs</field>
+            <field name="account_type">expense</field>
+        </record>
+
+        <record id="account_poultry_processing" model="account.account">
+            <field name="code">7030</field>
+            <field name="name">Processing Labor</field>
+            <field name="account_type">expense</field>
+        </record>
+
+        <!-- Revenue Accounts -->
+        <record id="account_live_bird_sales" model="account.account">
+            <field name="code">4000</field>
+            <field name="name">Live Bird Sales</field>
+            <field name="account_type">income</field>
+        </record>
+
+        <record id="account_broiler_sales" model="account.account">
+            <field name="code">4010</field>
+            <field name="name">Processed Broiler Sales</field>
+            <field name="account_type">income</field>
+        </record>
+
+        <record id="account_egg_sales" model="account.account">
+            <field name="code">4020</field>
+            <field name="name">Egg Sales</field>
+            <field name="account_type">income</field>
+        </record>
+
+        <record id="account_byproduct_sales" model="account.account">
+            <field name="code">4030</field>
+            <field name="name">Byproduct Sales</field>
+            <field name="account_type">income</field>
+        </record>
+    </data>
+</odoo>

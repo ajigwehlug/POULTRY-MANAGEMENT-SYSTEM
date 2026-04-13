@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_create,perm_read,perm_write,perm_unlink
+access_poultry_farm_all,access_poultry_farm_all,model_poultry_farm,,1,1,1,1
+access_poultry_flock_all,access_poultry_flock_all,model_poultry_flock,,1,1,1,1
+access_poultry_operations_all,access_poultry_operations_all,model_poultry_operations,,1,1,1,1

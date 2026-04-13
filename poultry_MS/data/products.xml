@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Poultry Products - Odoo 19 compatible -->
+        <!-- Using default UOM (no explicit references) -->
+        
+        <!-- Broiler Chicks -->
+        <record id="product_cobb_broiler_dayold" model="product.product">
+            <field name="name">Cobb 500 Broiler (Day-Old Chick)</field>
+            <field name="type">consu</field>
+            <field name="list_price">8.00</field>
+        </record>
+
+        <record id="product_ross_broiler_dayold" model="product.product">
+            <field name="name">Ross 308 Broiler (Day-Old Chick)</field>
+            <field name="type">consu</field>
+            <field name="list_price">7.50</field>
+        </record>
+
+        <!-- Layer Chicks -->
+        <record id="product_isa_brown_dayold" model="product.product">
+            <field name="name">ISA Brown Layer (Day-Old Chick)</field>
+            <field name="type">consu</field>
+            <field name="list_price">5.50</field>
+        </record>
+
+        <!-- Feed Products -->
+        <record id="product_starter_feed" model="product.product">
+            <field name="name">Broiler Starter Feed (50kg)</field>
+            <field name="type">consu</field>
+            <field name="list_price">45.00</field>
+        </record>
+
+        <record id="product_grower_feed" model="product.product">
+            <field name="name">Broiler Grower Feed (50kg)</field>
+            <field name="type">consu</field>
+            <field name="list_price">42.00</field>
+        </record>
+
+        <record id="product_finisher_feed" model="product.product">
+            <field name="name">Broiler Finisher Feed (50kg)</field>
+            <field name="type">consu</field>
+            <field name="list_price">40.00</field>
+        </record>
+
+        <!-- Processed Products -->
+        <record id="product_whole_broiler" model="product.product">
+            <field name="name">Whole Broiler (Processed)</field>
+            <field name="type">consu</field>
+            <field name="list_price">25.00</field>
+        </record>
+
+        <record id="product_broiler_parts" model="product.product">
+            <field name="name">Broiler Parts Pack</field>
+            <field name="type">consu</field>
+            <field name="list_price">22.00</field>
+        </record>
+
+        <!-- Eggs -->
+        <record id="product_brown_eggs" model="product.product">
+            <field name="name">Brown Eggs (Tray of 30)</field>
+            <field name="type">consu</field>
+            <field name="list_price">12.00</field>
+        </record>
+
+        <record id="product_white_eggs" model="product.product">
+            <field name="name">White Eggs (Tray of 30)</field>
+            <field name="type">consu</field>
+            <field name="list_price">11.00</field>
+        </record>
+
+        <!-- Byproducts -->
+        <record id="product_poultry_manure" model="product.product">
+            <field name="name">Poultry Manure (50kg bag)</field>
+            <field name="type">consu</field>
+            <field name="list_price">3.50</field>
+        </record>
+
+        <record id="product_feathers" model="product.product">
+            <field name="name">Poultry Feathers (kg)</field>
+            <field name="type">consu</field>
+            <field name="list_price">1.50</field>
+        </record>
+    </data>
+</odoo>
